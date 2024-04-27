@@ -73,12 +73,12 @@ class _IniciarSesionState extends State<IniciarSesion> {
               ),
               Btn1(
                 color: btn1,
-                w: MediaQuery.of(context).size.width * 0.3,
-                h: MediaQuery.of(context).size.height * 0.1,
+                width: MediaQuery.of(context).size.width * 0.4,
+                heigth: MediaQuery.of(context).size.height * 0.08,
                 child: const TextoBotones(
                   text: 'Iniciar Sesión',
-                  maxFontSize: 18,
-                  minFontSize: 6,
+                  maxFontSize: 24,
+                  minFontSize: 14,
                 ),
                 onTap: () {
                   Navigator.pushNamed(context, '/productosDisponibles');

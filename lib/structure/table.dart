@@ -68,16 +68,23 @@ class TableLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.15,
-      child: AutoSizeText(
+    return Expanded(
+      child: Text(
         text,
-        style: Theme.of(context).textTheme.displaySmall,
-        maxFontSize: 18,
-        minFontSize: 16,
-        maxLines: 1,
-        textAlign: TextAlign.center,
+        style: TextStyle(fontFamily: 'Acme', color: blanco, fontSize: 16),
       ),
     );
   }
 }
+
+/*SizedBox(
+      width: MediaQuery.of(context).size.width * 0.18,
+      child: AutoSizeText(
+        text,
+        style: Theme.of(context).textTheme.displaySmall,
+        maxFontSize: 18,
+        minFontSize: 8,
+        maxLines: 1,
+        textAlign: TextAlign.center,
+      ),
+    ); */

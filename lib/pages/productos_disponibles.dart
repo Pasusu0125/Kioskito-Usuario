@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kioskito_usuario/common/paleta.dart';
 import 'package:kioskito_usuario/structure/botones.dart';
 import 'package:kioskito_usuario/structure/cont_text.dart';
+import 'package:kioskito_usuario/structure/corousel.dart';
 import 'package:kioskito_usuario/structure/text_field.dart';
 
 class ProductosDisponibles extends StatefulWidget {
@@ -31,7 +32,7 @@ class _ProductosDisponiblesState extends State<ProductosDisponibles> {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).size.height * 0.1),
+                  bottom: MediaQuery.of(context).size.height * 0.03),
               child: ContenedorTexto(
                   w: MediaQuery.of(context).size.width * 0.8,
                   h: MediaQuery.of(context).size.height * 0.1,
@@ -42,28 +43,37 @@ class _ProductosDisponiblesState extends State<ProductosDisponibles> {
                   maxL: 1,
                   posicionText: Alignment.center),
             ),
-            CampoTexto(
-              text: 'Buscar',
-              icon: const Icon(Icons.search),
-              w: MediaQuery.of(context).size.width * 0.8,
-              h: MediaQuery.of(context).size.height * 0.08,
-              direccionText: TextAlignVertical.center,
+            Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height * 0.03),
+              child: CampoTexto(
+                text: 'Buscar',
+                icon: const Icon(Icons.search),
+                w: MediaQuery.of(context).size.width * 0.8,
+                h: MediaQuery.of(context).size.height * 0.08,
+                direccionText: TextAlignVertical.center,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height * 0.03),
+              child: const CarouselProducts(),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Btn1(
-                  w: MediaQuery.of(context).size.width * 0.1,
-                  h: MediaQuery.of(context).size.height * 0.08,
+                  width: MediaQuery.of(context).size.width * 0.1,
+                  heigth: MediaQuery.of(context).size.height * 0.08,
                   color: btn1,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/misPedidos');
+                  },
                   child: Row(
                     children: [
                       IconoBtn(icno: Icons.list_alt_outlined, color: blanco),
                       const TextoBotones(
-                          text: 'Mis Productos',
-                          maxFontSize: 14,
-                          minFontSize: 4)
+                          text: 'Mi Pedido', maxFontSize: 14, minFontSize: 4)
                     ],
                   ),
                 ),
@@ -71,8 +81,8 @@ class _ProductosDisponiblesState extends State<ProductosDisponibles> {
                   width: MediaQuery.of(context).size.width * 0.05,
                 ),
                 Btn1(
-                  w: MediaQuery.of(context).size.width * 0.1,
-                  h: MediaQuery.of(context).size.height * 0.08,
+                  width: MediaQuery.of(context).size.width * 0.1,
+                  heigth: MediaQuery.of(context).size.height * 0.08,
                   color: btn1,
                   onTap: () {
                     Navigator.pushNamed(context, '/realizarCompra');

@@ -5,23 +5,23 @@ import 'package:kioskito_usuario/common/paleta.dart';
 //Botón sin icono
 class Btn1 extends StatelessWidget {
   final Widget child;
-  final double w;
-  final double h;
+  final double width;
+  final double heigth;
   final Color color;
   final VoidCallback onTap;
   const Btn1(
       {super.key,
       required this.child,
-      required this.w,
-      required this.h,
+      required this.width,
+      required this.heigth,
       required this.color,
       required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: w,
-      height: h,
+      minWidth: width,
+      height: heigth,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: btn1,
       onPressed: onTap,

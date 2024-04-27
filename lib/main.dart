@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_usuario/common/style.dart';
 import 'package:kioskito_usuario/pages/iniciar_sesion.dart';
+import 'package:kioskito_usuario/pages/mis_pedidos.dart';
+import 'package:kioskito_usuario/pages/mis_pedidos_info.dart';
 import 'package:kioskito_usuario/pages/productos_disponibles.dart';
 import 'package:kioskito_usuario/pages/realizar_compra.dart';
 
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const IniciarSesion(),
         '/productosDisponibles': (context) => const ProductosDisponibles(),
         '/realizarCompra': (context) => const RealizarCompra(),
+        '/misPedidos': (context) => const MisPedidos(),
+        '/infoPedido': (context) => const MisPedidosInfo(),
       },
     );
   }
