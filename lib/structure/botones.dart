@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:kioskito_usuario/common/paleta.dart';
-import 'package:kioskito_usuario/common/style.dart';
 
 //Botón sin icono
 class Btn1 extends StatelessWidget {
@@ -31,76 +30,26 @@ class Btn1 extends StatelessWidget {
   }
 }
 
-//Botón con icono
-class Btn2 extends StatelessWidget {
-  final double w;
-  final double h;
-  final double w1;
-  final double h1;
-  final Color color;
-  final String text;
-  final Widget child;
-  final VoidCallback onTap;
-  const Btn2(
-      {super.key,
-      required this.w,
-      required this.h,
-      required this.text,
-      required this.color,
-      required this.child,
-      required this.w1,
-      required this.h1,
-      required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      width: w,
-      height: h,
-      child: MaterialButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        color: color,
-        onPressed: onTap,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            var tamanioBtn = constraints;
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                child,
-                Container(
-                  alignment: Alignment.center,
-                  width: tamanioBtn.maxWidth * w1,
-                  height: tamanioBtn.maxHeight * h1,
-                  child: TextoBotones(text: text),
-                ),
-              ],
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
 //Texto Botón
 class TextoBotones extends StatelessWidget {
   final String text;
-
+  final double maxFontSize;
+  final double minFontSize;
   const TextoBotones({
     super.key,
     required this.text,
+    required this.maxFontSize,
+    required this.minFontSize,
   });
 
   @override
   Widget build(BuildContext context) {
     return AutoSizeText(
-      maxFontSize: 24,
-      minFontSize: 12,
+      maxFontSize: maxFontSize,
+      minFontSize: minFontSize,
       maxLines: 1,
       text,
-      style: temaApp.textTheme.displaySmall,
+      style: Theme.of(context).textTheme.displaySmall,
       textAlign: TextAlign.center,
     );
   }

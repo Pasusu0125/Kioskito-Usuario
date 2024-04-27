@@ -15,8 +15,8 @@ Color letraBoton = Colors.white;
 Color btnEstado = const Color(0xFF6D2F12);
 Color btnDisponibilidad = const Color(0xFF23954E);
 Color btnIconoInfo = const Color(0xFF4242F6);
-Color btnIconoAprobar = const Color(0xFF23954E);
-Color btnIconoDisponibilidad = const Color(0xFF8E080D);
+Color btnIconoAgregar = const Color(0xFF23954E);
+Color btnIconoEliminar = const Color(0xFF8E080D);
 //Colores botones
 //Color btn1
 Color btn1 = const Color(0xFF804000);

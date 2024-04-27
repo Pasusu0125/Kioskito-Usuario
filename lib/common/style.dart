@@ -5,28 +5,22 @@ final temaApp = ThemeData(
   textTheme: TextTheme(
     titleLarge: TextStyle(
       color: tituloInicio,
-      fontSize: 200,
       fontFamily: 'Acme',
     ),
     titleMedium: TextStyle(
-        color: titulo1,
-        fontSize: 200,
-        fontFamily: 'Poppins',
-        fontWeight: FontWeight.w800),
+        color: titulo1, fontFamily: 'Poppins', fontWeight: FontWeight.w800),
     //Titulo txt AlertDialog
     titleSmall: TextStyle(
       color: negro,
-      fontSize: 80,
       fontFamily: 'Acme',
     ),
     displayMedium: TextStyle(
       color: titulo1,
-      fontSize: 92,
       fontFamily: 'Acme',
     ),
+    //Titulo tabla
     displaySmall: TextStyle(
       color: letraBoton,
-      fontSize: 24,
       fontFamily: 'Acme',
     ),
   ),

@@ -2,7 +2,6 @@ import 'package:adaptive_scrollbar/adaptive_scrollbar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:kioskito_usuario/common/paleta.dart';
-import 'package:kioskito_usuario/common/style.dart';
 
 class TableWidget extends StatelessWidget {
   const TableWidget({
@@ -69,10 +68,16 @@ class TableLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: temaApp.textTheme.displaySmall,
-      textAlign: TextAlign.center,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.15,
+      child: AutoSizeText(
+        text,
+        style: Theme.of(context).textTheme.displaySmall,
+        maxFontSize: 18,
+        minFontSize: 16,
+        maxLines: 1,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

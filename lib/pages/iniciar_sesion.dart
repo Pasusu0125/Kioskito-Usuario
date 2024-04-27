@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_usuario/common/paleta.dart';
-import 'package:kioskito_usuario/common/style.dart';
 import 'package:kioskito_usuario/structure/botones.dart';
 import 'package:kioskito_usuario/structure/cont_text.dart';
 import 'package:kioskito_usuario/structure/text_field.dart';
@@ -47,12 +46,12 @@ class _IniciarSesionState extends State<IniciarSesion> {
                   ContenedorTexto(
                       maxL: 1,
                       posicionText: Alignment.center,
-                      style: temaApp.textTheme.titleLarge,
+                      style: Theme.of(context).textTheme.titleLarge,
                       w: MediaQuery.of(context).size.width * 0.6,
                       h: MediaQuery.of(context).size.height * 0.15,
                       text: 'Kioskito',
                       maxF: 140,
-                      minF: 20)
+                      minF: 60)
                 ],
               ),
               CampoTexto(
@@ -76,7 +75,11 @@ class _IniciarSesionState extends State<IniciarSesion> {
                 color: btn1,
                 w: MediaQuery.of(context).size.width * 0.3,
                 h: MediaQuery.of(context).size.height * 0.1,
-                child: const TextoBotones(text: 'Iniciar Sesión'),
+                child: const TextoBotones(
+                  text: 'Iniciar Sesión',
+                  maxFontSize: 18,
+                  minFontSize: 6,
+                ),
                 onTap: () {
                   Navigator.pushNamed(context, '/productosDisponibles');
                 },

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kioskito_usuario/common/paleta.dart';
-import 'package:kioskito_usuario/common/style.dart';
 import 'package:kioskito_usuario/structure/botones.dart';
 import 'package:kioskito_usuario/structure/cont_text.dart';
 import 'package:kioskito_usuario/structure/text_field.dart';
@@ -37,7 +36,7 @@ class _ProductosDisponiblesState extends State<ProductosDisponibles> {
                   w: MediaQuery.of(context).size.width * 0.8,
                   h: MediaQuery.of(context).size.height * 0.1,
                   text: 'Productos Disponibles',
-                  style: temaApp.textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleMedium,
                   maxF: 100,
                   minF: 24,
                   maxL: 1,
@@ -53,31 +52,41 @@ class _ProductosDisponiblesState extends State<ProductosDisponibles> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Btn2(
-                  w: MediaQuery.of(context).size.width * 0.4,
-                  h: MediaQuery.of(context).size.height * 0.06,
-                  h1: 1,
-                  w1: 0.7,
+                Btn1(
+                  w: MediaQuery.of(context).size.width * 0.1,
+                  h: MediaQuery.of(context).size.height * 0.08,
                   color: btn1,
                   onTap: () {},
-                  text: 'Mi Pedido',
-                  child: IconoBtn(icno: Icons.list_alt_outlined, color: blanco),
+                  child: Row(
+                    children: [
+                      IconoBtn(icno: Icons.list_alt_outlined, color: blanco),
+                      const TextoBotones(
+                          text: 'Mis Productos',
+                          maxFontSize: 14,
+                          minFontSize: 4)
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.05,
                 ),
-                Btn2(
-                  w: MediaQuery.of(context).size.width * 0.5,
-                  h: MediaQuery.of(context).size.height * 0.06,
-                  h1: 1,
-                  w1: 0.8,
+                Btn1(
+                  w: MediaQuery.of(context).size.width * 0.1,
+                  h: MediaQuery.of(context).size.height * 0.08,
                   color: btn1,
                   onTap: () {
                     Navigator.pushNamed(context, '/realizarCompra');
                   },
-                  text: 'Realizar Compra',
-                  child: IconoBtn(
-                      icno: Icons.shopping_cart_outlined, color: blanco),
+                  child: Row(
+                    children: [
+                      IconoBtn(
+                          icno: Icons.shopping_cart_outlined, color: blanco),
+                      const TextoBotones(
+                          text: 'Realizar Compra',
+                          maxFontSize: 14,
+                          minFontSize: 4)
+                    ],
+                  ),
                 ),
               ],
             ),

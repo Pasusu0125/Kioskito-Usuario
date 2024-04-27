@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kioskito_usuario/common/style.dart';
 import 'package:kioskito_usuario/pages/iniciar_sesion.dart';
 import 'package:kioskito_usuario/pages/productos_disponibles.dart';
 import 'package:kioskito_usuario/pages/realizar_compra.dart';
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/productosDisponibles',
+      initialRoute: '/',
+      theme: temaApp,
       routes: {
         '/': (context) => const IniciarSesion(),
         '/productosDisponibles': (context) => const ProductosDisponibles(),
